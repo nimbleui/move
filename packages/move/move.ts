@@ -50,9 +50,6 @@ export function move(el: MoveElType, options?: MoveOptionsType) {
     Object.assign(data, { startX: clientX, startY: clientY });
     _options?.stop && e.stopPropagation(); // 阻止事件冒泡
     _options?.prevent && e.preventDefault(); // 阻止默认事件
-    if (_options?.boundary) {
-      infoData.limitInfo = sunBoundaryValue(data.target, _options);
-    }
 
     document.addEventListener('mousemove', mousemove);
     document.addEventListener('mouseup', mouseup);
@@ -62,6 +59,9 @@ export function move(el: MoveElType, options?: MoveOptionsType) {
     document.addEventListener('touchend', mouseup);
     
     _options.down?.({ ...data, e, value: infoData.callbackReturnValue }, setValue('down'));
+    if (_options?.boundary) {
+      infoData.limitInfo = sunBoundaryValue(data.target, _options);
+    }
   }
 
   function mousemove(e: MoveMouseTouchEvent) {
