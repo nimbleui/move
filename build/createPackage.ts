@@ -4,7 +4,7 @@ import { projRoot } from './utils';
 
 const pkg = {
   name: '@nimble-ui/move',
-  version: '1.0.4',
+  version: '1.0.6',
   description: '鼠标移动事件封装',
   author: {
     name: 'Chen Yu Yun',

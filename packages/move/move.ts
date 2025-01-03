@@ -22,7 +22,7 @@ const defaultData = {
 };
 
 export function move(el: MoveElType, options?: MoveOptionsType) {
-  const { changeTarget, ..._options } = options || {};
+  const { changeTarget, init, ..._options } = options || {};
   const data: MoveDataTypes = Object.assign({}, defaultData);
 
   const infoData: {
@@ -109,6 +109,7 @@ export function move(el: MoveElType, options?: MoveOptionsType) {
   const observe = new MutationObserver(() => {
     const value = isFunctionOrValue(el)
     if (value) {
+      init?.(value);
       (value as HTMLElement).addEventListener('mousedown', mousedown);
       (value as HTMLElement).addEventListener('touchstart', mousedown);
       observe.disconnect();

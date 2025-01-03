@@ -83,5 +83,6 @@ interface MoveOptionsType extends MoveBaseOptions {
   up?: (data: MoveEventCallbackParam, setValue: (data: any) => void) => void;
   agencyTarget?: (el: Element) => Element | undefined | false | void; // 判断是否要代理
   changeTarget?: (el: Element) => Element; // 改变目标元素
+  init?: (el: Element) => void; // 绑定按下事件时执行
 }
 ```
