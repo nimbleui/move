@@ -4,7 +4,7 @@ import { projRoot } from './utils';
 
 const pkg = {
   name: '@nimble-ui/move',
-  version: '1.0.6',
+  version: '1.0.7',
   description: '鼠标移动事件封装',
   author: {
     name: 'Chen Yu Yun',
@@ -14,18 +14,18 @@ const pkg = {
     'low code',
     'vue',
     'vue3',
-    'move',
+    'drag',
     'react',
-    'component library',
     '@nimble-ui/move',
     'nimble-ui',
     "move",
   ],
   license: 'MIT',
-  main: './lib/index.cjs.js',
-  module: './es/index.esm.js',
-  browser: './index.full.min.js',
-  types: './types/index.d.ts',
+  main: './index.cjs.js',
+  module: './index.esm.js',
+  unpkg: "./index.full.min.js",
+  jsdelivr: "./index.full.min.js",
+  types: './index.d.ts',
   homepage: 'https://github.com/nimbleui/move',
   bugs: {
     url: 'https://github.com/nimbleui/move/issues',
@@ -39,10 +39,9 @@ const pkg = {
   },
   exports: {
     '.': {
-      import: './es/index.esm.js',
-      require: './lib/index.cjs.js',
-      browser: './index.full.min.js',
-      types: './types/index.d.ts',
+      import: './index.esm.js',
+      require: './index.cjs.js',
+      types: './index.d.ts',
     },
   },
 };

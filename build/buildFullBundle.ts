@@ -30,10 +30,5 @@ export async function buildFullBundle() {
       name: 'yMove',
       sourcemap: false,
     },
-    {
-      format: 'esm',
-      file: resolve(projRoot, `./dist/index.full.min.mjs`),
-      sourcemap: false,
-    },
   ]);
 }
